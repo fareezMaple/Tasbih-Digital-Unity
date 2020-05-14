@@ -11,9 +11,11 @@ Feature of this app: (some of them may not available on Windows)
 5. Potrait and landscape orientation
 
 Download for Android (Google Play): https://play.google.com/store/apps/details?id=com.maplerr.DigitalTasbihUnity
+
 Download for Windows: https://github.com/fareezMaple/Tasbih-Digital-Unity/raw/master/Tasbih%20Digital/PC%20STANDALONE/PC%20STANDALONE.zip \*\*
 
 \*\*All Windows version should support
+
 Instruction to run on Windows:
 
 1. Download PC STANDALONE.zip file
