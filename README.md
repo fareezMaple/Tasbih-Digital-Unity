@@ -2,7 +2,7 @@
 
 Counter like app. Made with Unity. Code in c#
 
-Feature of this app:
+Feature of this app: (some of them may not available on Windows)
 
 1. Count number with increment of 1
 2. Sound feedback\*
@@ -19,5 +19,3 @@ Instruction to run on Windows:
 1. Download PC STANDALONE.zip file
 2. Extract to a folder
 3. Run Tasbih Digital.exe
-
-- feature may not available on Windows version
