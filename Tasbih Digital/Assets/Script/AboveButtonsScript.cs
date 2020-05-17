@@ -7,6 +7,8 @@ public class AboveButtonsScript : MonoBehaviour
     public GameObject VibrateButtonIcon;
     public GameObject SoundButtonIcon;
 
+    public GameObject infoPanel;
+
     private bool isMute;
     private bool isVibrate;
 
@@ -54,5 +56,10 @@ public class AboveButtonsScript : MonoBehaviour
             FindObjectOfType<GameManager>().isVibrateOn = isVibrate;
             Debug.Log("Vibrate is ON");
         }
+    }
+
+    public void showPanel()
+    {
+        infoPanel.SetActive(!infoPanel.activeSelf);
     }
 }

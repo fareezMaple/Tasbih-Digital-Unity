@@ -119,7 +119,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 1.5
+  bundleVersion: 1.7
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -160,7 +160,7 @@ PlayerSettings:
     Android: com.maplerr.DigitalTasbihUnity
     Standalone: com.Company.ProductName
   buildNumber: {}
-  AndroidBundleVersionCode: 3
+  AndroidBundleVersionCode: 4
   AndroidMinSdkVersion: 16
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
@@ -249,8 +249,8 @@ PlayerSettings:
   AndroidTargetArchitectures: 3
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: C:/Users/maple/Documents/UNITY STUFF/Tasbih Digital/ANDROID
-    RELEASES/user.keystore
+  AndroidKeystoreName: C:/Users/maple/Documents/UNITY STUFF/Tasbih-Digital-Unity/Tasbih
+    Digital/ANDROID RELEASES/user.keystore
   AndroidKeyaliasName: fareez tasbih
   AndroidBuildApkPerCpuArchitecture: 0
   AndroidTVCompatibility: 1
