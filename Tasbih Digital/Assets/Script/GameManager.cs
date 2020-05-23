@@ -17,6 +17,10 @@ public class GameManager : MonoBehaviour
     public int MainCount = 0;
 
     public bool isVibrateOn;
+    public bool isSound;
+
+    private AudioSource beepAudio;
+    public AudioClip beepClip;
 
     public void updateCount()
     {
@@ -27,6 +31,10 @@ public class GameManager : MonoBehaviour
         
         if (isVibrateOn)
             hapticButton();
+
+        if (isSound)
+            beepAudio.PlayOneShot(beepClip);
+
     }
 
     public void hapticButton()
@@ -37,7 +45,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        beepAudio = GetComponent<AudioSource>();
         MainCount = PlayerPrefs.GetInt("mainCount");
         MainCountText.text = MainCount.ToString();
         isVibrateOn = true;
