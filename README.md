@@ -10,6 +10,12 @@ Feature of this app: (some of them may not available on Windows)
 4. Save progress when exiting the app
 5. Potrait and landscape orientation
 
+Planned Feature
+
+1. Dark mode
+
+## App
+
 Download for Android (Google Play): https://play.google.com/store/apps/details?id=com.maplerr.DigitalTasbihUnity
 
 Download for Windows: https://github.com/fareezMaple/Tasbih-Digital-Unity/raw/master/Tasbih%20Digital/PC%20STANDALONE/PC%20STANDALONE.zip \*\*

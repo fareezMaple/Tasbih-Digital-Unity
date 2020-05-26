@@ -19,23 +19,19 @@ public class AboveButtonsScript : MonoBehaviour
         isVibrate = true;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void MuteSoundSwitch()
     {
         if (isMute)
         {
             isMute = false; //bukak sound
             SoundButtonIcon.GetComponent<CustomSpriteSwapper>().changeAlphaColour(!isMute);
+            GameObject.Find("GameManager").GetComponent<AudioSource>().mute = false;
             Debug.Log("Sound is ON");
         } else
         {
             isMute = true; //tutup sound
             SoundButtonIcon.GetComponent<CustomSpriteSwapper>().changeAlphaColour(!isMute);
+            GameObject.Find("GameManager").GetComponent<AudioSource>().mute = true;
             Debug.Log("Sound is OFF");
         }
     }
