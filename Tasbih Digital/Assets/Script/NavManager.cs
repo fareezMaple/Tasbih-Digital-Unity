@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class NavManager : MonoBehaviour
@@ -21,17 +18,5 @@ public class NavManager : MonoBehaviour
         Debug.Log("APPLICATION IS EXIT");
         navBottom.SetActive(false);
         Application.Quit();
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

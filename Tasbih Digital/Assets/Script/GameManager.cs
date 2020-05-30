@@ -20,7 +20,6 @@ public class GameManager : MonoBehaviour
     public bool isSound;
 
     private AudioSource beepAudio;
-    public AudioClip beepClip;
 
     public void updateCount()
     {
@@ -31,10 +30,12 @@ public class GameManager : MonoBehaviour
         
         if (isVibrateOn)
             hapticButton();
+    }
 
+    public void playAudioBeep() //attached to button
+    {
         if (isSound)
-            beepAudio.PlayOneShot(beepClip);
-
+            beepAudio.Play();
     }
 
     public void hapticButton()

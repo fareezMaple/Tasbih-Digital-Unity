@@ -26,14 +26,16 @@ public class AboveButtonsScript : MonoBehaviour
             isMute = false; //bukak sound
             SoundButtonIcon.GetComponent<CustomSpriteSwapper>().changeAlphaColour(!isMute);
             GameObject.Find("GameManager").GetComponent<AudioSource>().mute = false;
-            Debug.Log("Sound is ON");
         } else
         {
             isMute = true; //tutup sound
             SoundButtonIcon.GetComponent<CustomSpriteSwapper>().changeAlphaColour(!isMute);
             GameObject.Find("GameManager").GetComponent<AudioSource>().mute = true;
-            Debug.Log("Sound is OFF");
+            
         }
+        
+        Debug.Log("Sound is " + !isMute);
+        PlayerPrefs.SetInt("SoundSetting", BoolConverter.instance.boolToInt(isMute));
     }
 
     public void VibrateSwitch()
