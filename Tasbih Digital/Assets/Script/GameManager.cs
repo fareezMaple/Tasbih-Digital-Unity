@@ -43,7 +43,8 @@ public class GameManager : MonoBehaviour
 
     public void hapticButton()
     {
-        Vibration.Vibrate(49);
+        Vibration.Vibrate(45);
+        Debug.Log("SEDANG VIBRATE");
     }
 
     // Start is called before the first frame update
@@ -55,6 +56,8 @@ public class GameManager : MonoBehaviour
         MainCountText.text = MainCount.ToString();
         isVibrate = buttonSettingScript.onIsVibrate;
         isSound = buttonSettingScript.onIsSound;
+        
+        // Debug.Log("From GameManager, isSound is " + isSound + ", isVibrate is " + isVibrate);
 
         if (MainCount == 0)
             buttonText.text = "MULA";

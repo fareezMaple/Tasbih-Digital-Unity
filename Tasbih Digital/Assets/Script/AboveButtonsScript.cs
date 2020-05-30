@@ -18,8 +18,7 @@ public class AboveButtonsScript : MonoBehaviour
 
     public bool onIsSound => !isMute; //return to other class
     public bool onIsVibrate => isVibrate; //return to other class
-
-    // Start is called before the first frame update
+    
     void Start()
     {
         boolConverter = GetComponent<BoolConverter>();
@@ -30,6 +29,10 @@ public class AboveButtonsScript : MonoBehaviour
         isVibrate = boolConverter.intToBool(tempIsVibrate);
         
         SetInitialSettings(isMute, isVibrate);
+        /* //debug
+        Debug.Log("isMute is " + isMute + ", isVibrate is " + isVibrate);
+        Debug.Log("onIsSound is " + onIsSound + ", oIsVibrate is " + onIsVibrate);
+        */
     }
 
     public void MuteSoundSwitch()
@@ -83,10 +86,10 @@ public class AboveButtonsScript : MonoBehaviour
         
         if (mute)
         {
-            SoundButtonIcon.GetComponent<CustomSpriteSwapper>().changeAlphaColour(mute);
+            SoundButtonIcon.GetComponent<CustomSpriteSwapper>().changeAlphaColour(false);
         } else
         {
-            SoundButtonIcon.GetComponent<CustomSpriteSwapper>().changeAlphaColour(mute);
+            SoundButtonIcon.GetComponent<CustomSpriteSwapper>().changeAlphaColour(true);
         }
     }
 
@@ -98,5 +101,10 @@ public class AboveButtonsScript : MonoBehaviour
     public void openWebsite()
     {
         Application.OpenURL("https://sites.google.com/view/tasbihdigitalfareez/home");
+    }
+    
+    //DEBUG
+    public void DeleteAllPrefs() {
+        PlayerPrefs.DeleteAll();
     }
 }
