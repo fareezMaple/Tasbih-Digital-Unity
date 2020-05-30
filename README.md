@@ -13,12 +13,13 @@ Feature of this app: (some of them may not available on Windows)
 Planned Feature
 
 1. Dark mode
+2. Progress bar
 
 ## App
 
-Download for Android (Google Play): https://play.google.com/store/apps/details?id=com.maplerr.DigitalTasbihUnity
+Download for **Android** (Google Play): https://play.google.com/store/apps/details?id=com.maplerr.DigitalTasbihUnity
 
-Download for Windows: https://github.com/fareezMaple/Tasbih-Digital-Unity/raw/master/Tasbih%20Digital/PC%20STANDALONE/PC%20STANDALONE.zip \*\*
+Download for **Windows**: https://github.com/fareezMaple/Tasbih-Digital-Unity/raw/master/Tasbih%20Digital/PC%20STANDALONE/PC%20STANDALONE.zip \*\*
 
 \*\*All Windows version should support
 
