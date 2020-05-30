@@ -16,7 +16,7 @@ public class CustomSpriteSwapper : MonoBehaviour
         OriColour = spriteImage.color;
     }
 
-    public void changeAlphaColour(bool isFull) //AKAN di called pada function button masing2, apa2 adjust pada button tersebut
+    public void changeAlphaColour(bool isFull) //sepatutnya tayah modify
     {
         if (isFull)
         {

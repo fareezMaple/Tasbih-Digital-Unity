@@ -7,16 +7,29 @@ public class AboveButtonsScript : MonoBehaviour
     public GameObject VibrateButtonIcon;
     public GameObject SoundButtonIcon;
 
+    private string SOUND_SETTING = "SoundSetting";
+    private string VIBRATE_SETTING = "VibrateSetting";
+
     public GameObject infoPanel;
+    private BoolConverter boolConverter;
 
     private bool isMute;
     private bool isVibrate;
 
+    public bool onIsSound => !isMute; //return to other class
+    public bool onIsVibrate => isVibrate; //return to other class
+
     // Start is called before the first frame update
     void Start()
     {
-        isMute = false;
-        isVibrate = true;
+        boolConverter = GetComponent<BoolConverter>();
+
+        int tempIsMute = PlayerPrefs.GetInt(SOUND_SETTING, 0); 
+        int tempIsVibrate = PlayerPrefs.GetInt(VIBRATE_SETTING, 1); //convert 1 kpd true and vice versa
+        isMute = boolConverter.intToBool(tempIsMute);
+        isVibrate = boolConverter.intToBool(tempIsVibrate);
+        
+        SetInitialSettings(isMute, isVibrate);
     }
 
     public void MuteSoundSwitch()
@@ -35,7 +48,7 @@ public class AboveButtonsScript : MonoBehaviour
         }
         
         Debug.Log("Sound is " + !isMute);
-        PlayerPrefs.SetInt("SoundSetting", BoolConverter.instance.boolToInt(isMute));
+        PlayerPrefs.SetInt(SOUND_SETTING, boolConverter.boolToInt(isMute));
     }
 
     public void VibrateSwitch()
@@ -44,15 +57,36 @@ public class AboveButtonsScript : MonoBehaviour
         {
             isVibrate = false; //akan bervibrate
             VibrateButtonIcon.GetComponent<CustomSpriteSwapper>().changeAlphaColour(isVibrate);
-            FindObjectOfType<GameManager>().isVibrateOn = isVibrate;
-            Debug.Log("Vibrate is OFF");
+            FindObjectOfType<GameManager>().isVibrate = isVibrate;
         }
         else
         {
             isVibrate = true; //takkan tervibrate
             VibrateButtonIcon.GetComponent<CustomSpriteSwapper>().changeAlphaColour(isVibrate);
-            FindObjectOfType<GameManager>().isVibrateOn = isVibrate;
-            Debug.Log("Vibrate is ON");
+            FindObjectOfType<GameManager>().isVibrate = isVibrate;
+        }
+        
+        Debug.Log("Vibrate is " + isVibrate);
+        PlayerPrefs.SetInt(VIBRATE_SETTING, boolConverter.boolToInt(isVibrate));
+    }
+
+    private void SetInitialSettings(bool mute, bool vibrate)
+    {
+        if (vibrate)
+        {
+            VibrateButtonIcon.GetComponent<CustomSpriteSwapper>().changeAlphaColour(vibrate);
+        }
+        else
+        {
+            VibrateButtonIcon.GetComponent<CustomSpriteSwapper>().changeAlphaColour(vibrate);
+        }
+        
+        if (mute)
+        {
+            SoundButtonIcon.GetComponent<CustomSpriteSwapper>().changeAlphaColour(mute);
+        } else
+        {
+            SoundButtonIcon.GetComponent<CustomSpriteSwapper>().changeAlphaColour(mute);
         }
     }
 

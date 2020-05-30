@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -16,10 +17,12 @@ public class GameManager : MonoBehaviour
     [HideInInspector]
     public int MainCount = 0;
 
-    public bool isVibrateOn;
+    public bool isVibrate;
     public bool isSound;
 
     private AudioSource beepAudio;
+
+    private AboveButtonsScript buttonSettingScript;
 
     public void updateCount()
     {
@@ -28,7 +31,7 @@ public class GameManager : MonoBehaviour
         MainCountText.text = MainCount.ToString();
         PlayerPrefs.SetInt("mainCount", MainCount);
         
-        if (isVibrateOn)
+        if (isVibrate)
             hapticButton();
     }
 
@@ -46,10 +49,12 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        buttonSettingScript = GameObject.Find("NavPanelAbove").GetComponent<AboveButtonsScript>();
         beepAudio = GetComponent<AudioSource>();
         MainCount = PlayerPrefs.GetInt("mainCount");
         MainCountText.text = MainCount.ToString();
-        isVibrateOn = true;
+        isVibrate = buttonSettingScript.onIsVibrate;
+        isSound = buttonSettingScript.onIsSound;
 
         if (MainCount == 0)
             buttonText.text = "MULA";
