@@ -1,4 +1,5 @@
-﻿using RDG;
+﻿using System;
+using RDG;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -30,21 +31,17 @@ public class GameManager : MonoBehaviour
         MainCount++;
         MainCountText.text = MainCount.ToString();
         PlayerPrefs.SetInt("mainCount", MainCount);
-        
+
         if (isVibrate)
             hapticButton();
-    }
-
-    public void playAudioBeep() //attached to button
-    {
+        
         if (isSound)
             beepAudio.Play();
     }
 
-    public void hapticButton()
+    private void hapticButton()
     {
-        Vibration.Vibrate(45);
-        Debug.Log("SEDANG VIBRATE");
+        Vibration.Vibrate(45); //45ms
     }
 
     // Start is called before the first frame update
@@ -57,7 +54,7 @@ public class GameManager : MonoBehaviour
         isVibrate = buttonSettingScript.onIsVibrate;
         isSound = buttonSettingScript.onIsSound;
         
-        // Debug.Log("From GameManager, isSound is " + isSound + ", isVibrate is " + isVibrate);
+        Debug.Log("From GameManager, isSound is " + isSound + ", isVibrate is " + isVibrate);
 
         if (MainCount == 0)
             buttonText.text = "MULA";
@@ -75,5 +72,10 @@ public class GameManager : MonoBehaviour
         {
             mainButton.onClick.Invoke(); //simulate 'space' button seolah2 tekan button
         }
+    }
+
+    public void ResetAllPrefs()
+    {
+        throw new NotImplementedException("Future update");
     }
 }

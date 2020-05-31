@@ -41,12 +41,12 @@ public class AboveButtonsScript : MonoBehaviour
         {
             isMute = false; //bukak sound
             SoundButtonIcon.GetComponent<CustomSpriteSwapper>().changeAlphaColour(!isMute);
-            GameObject.Find("GameManager").GetComponent<AudioSource>().mute = false;
+            FindObjectOfType<GameManager>().isSound = !isMute;
         } else
         {
             isMute = true; //tutup sound
             SoundButtonIcon.GetComponent<CustomSpriteSwapper>().changeAlphaColour(!isMute);
-            GameObject.Find("GameManager").GetComponent<AudioSource>().mute = true;
+            FindObjectOfType<GameManager>().isSound = !isMute;
             
         }
         
@@ -101,10 +101,5 @@ public class AboveButtonsScript : MonoBehaviour
     public void openWebsite()
     {
         Application.OpenURL("https://sites.google.com/view/tasbihdigitalfareez/home");
-    }
-    
-    //DEBUG
-    public void DeleteAllPrefs() {
-        PlayerPrefs.DeleteAll();
     }
 }
