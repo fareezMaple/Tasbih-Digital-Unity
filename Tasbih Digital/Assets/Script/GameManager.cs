@@ -5,10 +5,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
+// ReSharper disable InconsistentNaming
 
 public class GameManager : MonoBehaviour
 {
     public Text MainCountText;
+    public Slider progressBar;
+    
+    private int targetCount = 33;
+    private int tempCount;
 
     public GameObject resetButton;
     public Text buttonText;
@@ -30,7 +35,18 @@ public class GameManager : MonoBehaviour
         buttonText.text = "+1";
         MainCount++;
         MainCountText.text = MainCount.ToString();
-        PlayerPrefs.SetInt("mainCount", MainCount);
+        
+        tempCount++;
+        
+        progressBar.value++;
+        if (tempCount == targetCount)
+        {
+            progressBar.value = 0;
+            tempCount = 0;
+        }
+
+
+            PlayerPrefs.SetInt("mainCount", MainCount);
 
         if (isVibrate)
             hapticButton();
@@ -50,11 +66,25 @@ public class GameManager : MonoBehaviour
         buttonSettingScript = GameObject.Find("NavPanelAbove").GetComponent<AboveButtonsScript>();
         beepAudio = GetComponent<AudioSource>();
         MainCount = PlayerPrefs.GetInt("mainCount");
+
+        tempCount = MainCount;
+        
         MainCountText.text = MainCount.ToString();
+
+        if (MainCount > targetCount)
+        {
+            //TODO: tolak je target count tu nanti
+        }
+        else
+        {
+            progressBar.value = MainCount;
+        }
+
+            //setting
         isVibrate = buttonSettingScript.onIsVibrate;
         isSound = buttonSettingScript.onIsSound;
         
-        Debug.Log("From GameManager, isSound is " + isSound + ", isVibrate is " + isVibrate);
+        // Debug.Log("From GameManager, isSound is " + isSound + ", isVibrate is " + isVibrate);
 
         if (MainCount == 0)
             buttonText.text = "MULA";
