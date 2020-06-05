@@ -3,6 +3,7 @@ using RDG;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 // ReSharper disable InconsistentNaming
@@ -39,6 +40,7 @@ public class GameManager : MonoBehaviour
         tempCount++;
         
         progressBar.value++;
+        
         if (tempCount == targetCount)
         {
             progressBar.value = 0;
@@ -46,7 +48,7 @@ public class GameManager : MonoBehaviour
         }
 
 
-            PlayerPrefs.SetInt("mainCount", MainCount);
+        PlayerPrefs.SetInt("mainCount", MainCount);
 
         if (isVibrate)
             hapticButton();
@@ -67,20 +69,21 @@ public class GameManager : MonoBehaviour
         beepAudio = GetComponent<AudioSource>();
         MainCount = PlayerPrefs.GetInt("mainCount");
 
-        tempCount = MainCount;
+        tempCount = MainCount; //tempCount is used in progressBar
         
-        MainCountText.text = MainCount.ToString();
+        MainCountText.text = MainCount.ToString(); //set the text in view
 
-        if (MainCount > targetCount)
+        if (MainCount >= targetCount) //logic to set the initial progressbar value
         {
-            //TODO: tolak je target count tu nanti
-        }
-        else
-        {
-            progressBar.value = MainCount;
+            while (tempCount >= targetCount)
+            {
+                tempCount -= targetCount;
+            }
         }
 
-            //setting
+        progressBar.value = tempCount; //set progressbar in view
+
+        //setting
         isVibrate = buttonSettingScript.onIsVibrate;
         isSound = buttonSettingScript.onIsSound;
         
@@ -103,9 +106,5 @@ public class GameManager : MonoBehaviour
             mainButton.onClick.Invoke(); //simulate 'space' button seolah2 tekan button
         }
     }
-
-    public void ResetAllPrefs()
-    {
-        throw new NotImplementedException("Future update");
-    }
+    
 }

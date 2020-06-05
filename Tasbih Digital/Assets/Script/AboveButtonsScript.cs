@@ -98,8 +98,8 @@ public class AboveButtonsScript : MonoBehaviour
         infoPanel.SetActive(!infoPanel.activeSelf);
     }
 
-    public void openWebsite()
+    public void openWebsite(string URL)
     {
-        Application.OpenURL("https://sites.google.com/view/tasbihdigitalfareez/home");
+        Application.OpenURL(URL);
     }
 }

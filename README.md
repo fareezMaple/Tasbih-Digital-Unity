@@ -1,5 +1,10 @@
 # Tasbih-Digital-Unity
 
+![Works with Android](https://img.shields.io/badge/Works_with-Android-green?style=flat-square)
+![Works with Windows](https://img.shields.io/badge/Works_with-Android-green?style=flat-square)
+![Maintenance](https://img.shields.io/maintenance/yes/2020?style=flat-square)
+![Twitter Follow](https://img.shields.io/twitter/follow/kamal_ke_tu?label=Follow&style=social)
+
 Counter like app. Made with Unity. Code in c#
 
 Feature of this app: (some of them may not available on Windows)
@@ -13,7 +18,6 @@ Feature of this app: (some of them may not available on Windows)
 Planned Feature
 
 1. Dark mode
-2. Progress bar
 
 ## App
 

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class NavManager : MonoBehaviour
@@ -18,5 +19,13 @@ public class NavManager : MonoBehaviour
         Debug.Log("APPLICATION IS EXIT");
         navBottom.SetActive(false);
         Application.Quit();
+    }
+    
+    public void ResetAllPrefs()
+    {
+        throw new NotImplementedException("Future update");
+        //TODO: implement to a button in settings or something.
+        PlayerPrefs.DeleteAll();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
