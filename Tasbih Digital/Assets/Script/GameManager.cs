@@ -1,10 +1,6 @@
-﻿using System;
-using RDG;
-using System.Collections;
-using System.Collections.Generic;
+﻿using RDG;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 // ReSharper disable InconsistentNaming
 
@@ -30,6 +26,7 @@ public class GameManager : MonoBehaviour
     private AudioSource beepAudio;
 
     private AboveButtonsScript buttonSettingScript;
+    private BlinkingStatus blinkingStatus;
 
     public void updateCount()
     {
@@ -40,11 +37,18 @@ public class GameManager : MonoBehaviour
         tempCount++;
         
         progressBar.value++;
+
+        if (blinkingStatus.isBlinking)
+        {
+            blinkingStatus.StopBlinking();
+        }
         
         if (tempCount == targetCount)
         {
             progressBar.value = 0;
             tempCount = 0;
+            //blink
+            blinkingStatus.StartBlinking();
         }
 
 
@@ -66,6 +70,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         buttonSettingScript = GameObject.Find("NavPanelAbove").GetComponent<AboveButtonsScript>();
+        blinkingStatus = GetComponent<BlinkingStatus>();
         beepAudio = GetComponent<AudioSource>();
         MainCount = PlayerPrefs.GetInt("mainCount");
 
