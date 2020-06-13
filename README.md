@@ -15,20 +15,30 @@ Feature of this app: (some of them may not available on Windows)
 4. Save progress when exiting the app
 5. Potrait and landscape orientation
 
-Planned Feature
+## Getting started
 
-1. Dark mode
+- Start counting by tapping 'MULA'. The counter will add. The button text changed to '+1'
+- 'RESET' is set the counter back to 0
+- 'KELUAR' is to exit the app
+- Progress bar below the number show the progress towards the target (33)
+- Three button above. Sound, Vibration, and info button. (App will remember your settings)
+- Value is automatically save/restore when app is killed/start.
 
-## App
+## App UI
+
+<img src="https://user-images.githubusercontent.com/60868965/84562272-ceccb800-ad85-11ea-92f7-91bb07c34df7.jpg" alt="Screenshot_20200611-154614_Tasbih Digital" width="270" height="480">
+<img src="https://user-images.githubusercontent.com/60868965/84562273-d0967b80-ad85-11ea-8a8f-c320384753fe.jpg" alt="Screenshot_20200611-154622_Tasbih Digital" width="270" height="480">
+
+## App releases
 
 Download for **Android** (Google Play): https://play.google.com/store/apps/details?id=com.maplerr.DigitalTasbihUnity
 
-Download for **Windows**: https://github.com/fareezMaple/Tasbih-Digital-Unity/raw/master/Tasbih%20Digital/PC%20STANDALONE/PC%20STANDALONE.zip \*\*
+Download for **Windows**: https://github.com/fareezMaple/Tasbih-Digital-Unity/releases \*\*
 
 \*\*All Windows version should support
 
 Instruction to run on Windows:
 
 1. Download PC STANDALONE.zip file
-2. Extract to a folder
+2. Extract all files to a folder
 3. Run Tasbih Digital.exe
