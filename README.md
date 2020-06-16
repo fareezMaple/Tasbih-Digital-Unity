@@ -31,7 +31,7 @@ Feature of this app: (some of them may not available on Windows)
 
 ## App releases
 
-Download for **Android** (Google Play): https://play.google.com/store/apps/details?id=com.maplerr.DigitalTasbihUnity
+Download for **Android** :[Google Play](https://play.google.com/store/apps/details?id=com.maplerr.DigitalTasbihUnity) or [Huawei App Gallery](https://appgallery.cloud.huawei.com/marketshare/app/C102229005?locale=en_GB&source=appshare&subsource=C102229005)
 
 Download for **Windows**: https://github.com/fareezMaple/Tasbih-Digital-Unity/releases \*\*
 
