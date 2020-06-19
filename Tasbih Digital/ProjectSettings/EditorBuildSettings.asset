@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/android/MAIN.unity
     guid: c85e037d24d1f6345b9839965315f970
+  - enabled: 1
+    path: Assets/Scenes/android/MAIN DARK.unity
+    guid: b22a629aa6378404eb7b8ea31140e36f
   m_configObjects: {}

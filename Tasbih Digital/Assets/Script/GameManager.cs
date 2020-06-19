@@ -1,6 +1,5 @@
 ﻿using RDG;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 // ReSharper disable InconsistentNaming
 
