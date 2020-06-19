@@ -2373,7 +2373,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 922308784}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1696973189}
+        m_MethodName: changeMode
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &922308784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4440,6 +4451,7 @@ GameObject:
   - component: {fileID: 1696973185}
   - component: {fileID: 1696973188}
   - component: {fileID: 1696973187}
+  - component: {fileID: 1696973189}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -4592,6 +4604,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blinkingBar: {fileID: 1275604520}
   isBlinking: 0
+--- !u!114 &1696973189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1696973184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf5b4f409e2711848aae84fdb6ef2f5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1706779029
 GameObject:
   m_ObjectHideFlags: 0
