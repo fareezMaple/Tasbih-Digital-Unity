@@ -9,6 +9,7 @@ public class ModeChanger : MonoBehaviour
         if (SceneManager.GetActiveScene().buildIndex == 0)
         {
             SceneManager.LoadScene(1); //load dark scene
+            //TODO: transition between scene. TGk VIdeo brakeys.
 
         }
         else if (SceneManager.GetActiveScene().buildIndex == 1)
