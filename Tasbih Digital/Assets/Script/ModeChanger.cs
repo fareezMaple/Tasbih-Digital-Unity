@@ -1,20 +1,28 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class ModeChanger : MonoBehaviour
 {
+    private LevelLoader loader;
+
+    private void Awake()
+    {
+        loader = GameObject.Find("LevelLoader").GetComponent<LevelLoader>();
+    }
 
     public void changeMode()
     {
         if (SceneManager.GetActiveScene().buildIndex == 0)
         {
-            SceneManager.LoadScene(1); //load dark scene
-            //TODO: transition between scene. TGk VIdeo brakeys.
+            //load dark scene
+            loader.LoadNextLevel(1);
 
         }
         else if (SceneManager.GetActiveScene().buildIndex == 1)
         {
-            SceneManager.LoadScene(0); //load light scene
+            //load light scene
+            loader.LoadNextLevel(0); 
         }
     }
 }
