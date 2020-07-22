@@ -11,6 +11,14 @@ public class ModeChanger : MonoBehaviour
         loader = GameObject.Find("LevelLoader").GetComponent<LevelLoader>();
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            changeMode();
+        }
+    }
+
     public void changeMode()
     {
         if (SceneManager.GetActiveScene().buildIndex == 0)
