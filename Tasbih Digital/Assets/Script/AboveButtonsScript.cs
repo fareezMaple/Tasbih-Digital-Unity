@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -18,21 +19,30 @@ public class AboveButtonsScript : MonoBehaviour
 
     public bool onIsSound => !isMute; //return to other class
     public bool onIsVibrate => isVibrate; //return to other class
-    
+
     void Start()
     {
         boolConverter = GetComponent<BoolConverter>();
 
-        int tempIsMute = PlayerPrefs.GetInt(SOUND_SETTING, 0); 
+        int tempIsMute = PlayerPrefs.GetInt(SOUND_SETTING, 0);
         int tempIsVibrate = PlayerPrefs.GetInt(VIBRATE_SETTING, 1); //convert 1 kpd true and vice versa
         isMute = boolConverter.intToBool(tempIsMute);
         isVibrate = boolConverter.intToBool(tempIsVibrate);
-        
+
         SetInitialSettings(isMute, isVibrate);
         /* //debug
         Debug.Log("isMute is " + isMute + ", isVibrate is " + isVibrate);
         Debug.Log("onIsSound is " + onIsSound + ", oIsVibrate is " + onIsVibrate);
         */
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            //keyboard 'S'
+            MuteSoundSwitch();
+        }
     }
 
     public void MuteSoundSwitch()
