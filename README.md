@@ -34,6 +34,7 @@ Feature of this app:
 <img src="https://user-images.githubusercontent.com/60868965/84562273-d0967b80-ad85-11ea-8a8f-c320384753fe.jpg" alt="Screenshot_20200611-154622_Tasbih Digital" width="270" height="480">
 
 **Windows**
+
 ![ezgif com-optimize](https://user-images.githubusercontent.com/60868965/89722519-eee2c580-da1c-11ea-97b5-ec03d4a2e722.gif)
 
 ## App releases
